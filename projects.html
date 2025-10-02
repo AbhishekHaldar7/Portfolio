@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Projects - Abhishek Haldar | AI, Machine Learning, Analytics</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore Abhishek Haldar's data science projects including AI Chess Game, Consumer Segmentation, and Machine Learning applications.">
+    <meta name="keywords" content="Data Science Projects, Machine Learning, AI Chess, Consumer Segmentation, Python Projects, Portfolio">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #f1f5f9 70%, #e2e8f0 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: none;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.1);
+        }
+
+
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+            color: #e0e6ed !important;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(15, 15, 35, 0.9) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .nav-links a {
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .tech-tag {
+            background: rgba(118, 75, 162, 0.2);
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .project-link {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 4rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 41, 59, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #1e293b;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 25px;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .project-link:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="main.html" class="logo">Abhishek Haldar</a>
+            <ul class="nav-links">
+                <li><a href="main.html#home">Home</a></li>
+                <li><a href="main.html#about">About</a></li>
+                <li><a href="main.html#skills">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="main.html#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <h1 class="page-title">My Projects</h1>
+            <p class="page-subtitle">Showcasing my work in data science, machine learning, and software development</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">♛</div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Supported Chess Game</h3>
+                        <p class="project-description">
+                            A fully functional chess game built with Python and Pygame featuring multiple themes, 
+                            sound effects, valid move highlighting, castling mechanics, and AI opponent capabilities. 
+                            The game includes an intuitive drag-and-drop interface with visual feedback for legal moves 
+                            and captures.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pygame</span>
+                            <span class="tech-tag">Object-Oriented Programming</span>
+                            <span class="tech-tag">Game Development</span>
+                            <span class="tech-tag">AI Algorithms</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AbhishekHaldar7/AI-Supported-Chess-Game.git" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Consumer Segmentation & Portfolio Tool</h3>
+                        <p class="project-description">
+                            A comprehensive data science project featuring customer segmentation analysis using machine learning 
+                            clustering algorithms and portfolio optimization tools. Includes interactive dashboards for 
+                            visualizing customer segments and investment portfolio performance with risk analysis.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Clustering</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AbhishekHaldar7/Customer-Segmentation-and-Profiling-Tool.git" target="_blank" class="project-link">GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation background change on scroll
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const theme = document.documentElement.getAttribute('data-theme');
+            if (window.scrollY > 100) {
+                nav.style.background = theme === 'dark' ? 'rgba(15, 15, 35, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.style.background = theme === 'dark' ? 'rgba(15, 15, 35, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Certifications - Abhishek Haldar | AWS, Microsoft, Google Cloud</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="View Abhishek Haldar's 21+ professional certifications in AWS, Microsoft Power BI, Google Cloud, Data Analytics, and Machine Learning.">
+    <meta name="keywords" content="AWS Certifications, Microsoft Power BI, Google Cloud, Data Analytics, Machine Learning Certifications, Professional Badges">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #f1f5f9 70%, #e2e8f0 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: none;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.1);
+        }
+
+
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
+            color: #e0e6ed !important;
+        }
+
+        [data-theme="dark"] nav {
+            background: rgba(15, 15, 35, 0.9) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .nav-links a {
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .cert-provider {
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .cert-description {
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .page-subtitle {
+            color: #e0e6ed;
+        }
+
+        [data-theme="dark"] .stats-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="dark"] .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a {
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 4rem;
+        }
+
+        /* Certifications Grid */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 41, 59, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        }
+
+        .cert-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-provider {
+            font-size: 1rem;
+            color: #1e293b;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .cert-description {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        .cert-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            border: 1px solid rgba(30, 41, 59, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(30, 41, 59, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            display: block;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        /* AWS and Google Badge Items */
+        .aws-cert-item, .aws-badge-item, .google-badge-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            cursor: pointer;
+            border: 1px solid rgba(30, 41, 59, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .aws-cert-item:hover, .aws-badge-item:hover, .google-badge-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .google-badge-item {
+            padding: 1.5rem;
+        }
+
+        [data-theme="dark"] .aws-cert-item,
+        [data-theme="dark"] .aws-badge-item,
+        [data-theme="dark"] .google-badge-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* AWS Two Column Responsive */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cert-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .cert-card:nth-child(1) { animation-delay: 0.1s; }
+        .cert-card:nth-child(2) { animation-delay: 0.2s; }
+        .cert-card:nth-child(3) { animation-delay: 0.3s; }
+        .cert-card:nth-child(4) { animation-delay: 0.4s; }
+        .cert-card:nth-child(5) { animation-delay: 0.5s; }
+        .cert-card:nth-child(6) { animation-delay: 0.6s; }
+        .cert-card:nth-child(7) { animation-delay: 0.7s; }
+        .cert-card:nth-child(8) { animation-delay: 0.8s; }
+        .cert-card:nth-child(9) { animation-delay: 0.9s; }
+        .cert-card:nth-child(10) { animation-delay: 1.0s; }
+        .cert-card:nth-child(11) { animation-delay: 1.1s; }
+        .cert-card:nth-child(12) { animation-delay: 1.2s; }
+        .cert-card:nth-child(13) { animation-delay: 1.3s; }
+        .cert-card:nth-child(14) { animation-delay: 1.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="main.html" class="logo">Abhishek Haldar</a>
+            <ul class="nav-links">
+                <li><a href="main.html#home">Home</a></li>
+                <li><a href="main.html#about">About</a></li>
+                <li><a href="main.html#skills">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="main.html#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <h1 class="page-title">Professional Certifications</h1>
+
+            <!-- Microsoft Certifications -->
+            <h2 style="color: #10b981; margin: 3rem 0 2rem 0; text-align: center; font-size: 2rem;">Microsoft Data Analyst Career Path</h2>
+            <div class="certifications-grid">
+                <div class="cert-card" onclick="openCertificate('MS certies/Configure a semantic model.pdf')">
+                    <div class="cert-badge">Power BI</div>
+                    <div class="cert-icon" style="background: #4A90E2; color: #FFD700; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⭐</div>
+                    <div class="cert-title">Configure a Semantic Model</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/28/2025</div>
+                    <div class="cert-description">Advanced configuration and optimization of semantic models in Power BI for enhanced data analysis and reporting.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Create DAX calculations in semantic models.pdf')">
+                    <div class="cert-badge">DAX</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 18px;">fx</div>
+                    <div class="cert-title">Create DAX Calculations</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Mastery of Data Analysis Expressions (DAX) for creating complex calculations and measures. Module assessment passed.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Create visual calculations in Power Bl Desktop.pdf')">
+                    <div class="cert-badge">Visualization</div>
+                    <div class="cert-icon" style="background: #4A90E2; color: #FFD700; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⭐</div>
+                    <div class="cert-title">Create Visual Calculations</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Advanced techniques for creating dynamic visual calculations and interactive reports in Power BI Desktop. Module assessment passed.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Discover data analysis.pdf')">
+                    <div class="cert-badge">Analytics</div>
+                    <div class="cert-icon">🔍</div>
+                    <div class="cert-title">Discover Data Analysis</div>
+                    <div class="cert-provider">Microsoft Learn</div>
+                    <div class="cert-description">Foundational concepts and methodologies for effective data analysis and business intelligence.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Explore data in Power Bl.pdf')">
+                    <div class="cert-badge">Exploration</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🔍</div>
+                    <div class="cert-title">Explore Data in Power BI</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Comprehensive data exploration techniques and best practices for discovering insights in Power BI.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Get started building with Power Bl.pdf')">
+                    <div class="cert-badge">Fundamentals</div>
+                    <div class="cert-icon">🚀</div>
+                    <div class="cert-title">Get Started Building with Power BI</div>
+                    <div class="cert-provider">Microsoft Learn</div>
+                    <div class="cert-description">Essential skills for building effective dashboards and reports from scratch in Power BI.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Get started with Copilot in Power BI.pdf')">
+                    <div class="cert-badge">AI/Copilot</div>
+                    <div class="cert-icon" style="background: #4A90E2; color: #FFD700; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⭐</div>
+                    <div class="cert-title">Get Started with Copilot in Power BI</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/28/2025</div>
+                    <div class="cert-description">Leveraging AI-powered Copilot features for enhanced productivity and intelligent insights. Module assessment passed.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Introduction to end-to-end analytics using Microsoft Fabric.pdf')">
+                    <div class="cert-badge">Fabric</div>
+                    <div class="cert-icon" style="background: #4A90E2; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">📊</div>
+                    <div class="cert-title">End-to-End Analytics with Microsoft Fabric</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/26/2025</div>
+                    <div class="cert-description">Comprehensive analytics solutions using Microsoft Fabric for unified data platform experiences. Module assessment passed.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Model data in Power BI.pdf')">
+                    <div class="cert-badge">Modeling</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">💰</div>
+                    <div class="cert-title">Model Data in Power BI</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Advanced data modeling techniques for creating robust and scalable Power BI solutions.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Modify DAX filter context in semantic models.pdf')">
+                    <div class="cert-badge">Advanced DAX</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🏆</div>
+                    <div class="cert-title">Modify DAX Filter Context</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Expert-level DAX techniques for manipulating filter context and creating sophisticated calculations.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Optimize a model for performance in Power Bl.pdf')">
+                    <div class="cert-badge">Performance</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">📊</div>
+                    <div class="cert-title">Optimize Model Performance</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Performance optimization strategies and best practices for high-performing Power BI models.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Publish and share in Power BI.pdf')">
+                    <div class="cert-badge">Sharing</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🖥️</div>
+                    <div class="cert-title">Publish and Share in Power BI</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Effective strategies for publishing, sharing, and collaborating on Power BI content across organizations.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Use DAX time intelligence functions in semantic models.pdf')">
+                    <div class="cert-badge">Time Intelligence</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 18px;">fx</div>
+                    <div class="cert-title">DAX Time Intelligence Functions</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Mastery of time-based calculations and temporal analysis using DAX time intelligence functions.</div>
+                </div>
+
+                <div class="cert-card" onclick="openCertificate('MS certies/Write DAX formulas for semantic models.pdf')">
+                    <div class="cert-badge">DAX Formulas</div>
+                    <div class="cert-icon" style="background: #FFD700; color: #333; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 18px;">fx</div>
+                    <div class="cert-title">Write DAX Formulas</div>
+                    <div class="cert-provider">Microsoft Learn • Completed 9/29/2025</div>
+                    <div class="cert-description">Comprehensive guide to writing effective and efficient DAX formulas for semantic models.</div>
+                </div>
+            </div>
+
+            <!-- AWS Certifications -->
+            <h2 style="color: #FF9900; margin: 4rem 0 2rem 0; text-align: center; font-size: 2rem;">☁️ AWS Academy Certifications & Badges</h2>
+            
+            <!-- AWS Two Column Layout -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                <!-- AWS Certificates Column -->
+                <div>
+                    <h3 style="color: #FF9900; margin-bottom: 2rem; text-align: center; font-size: 1.5rem;">📜 Certificates</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="aws-cert-item" onclick="openCertificate('AWS Certies/AWS Academy Graduate - Generative Al Foundations - Training Badge.pdf')">
+                            <div style="background: linear-gradient(45deg, #FF9900, #FF6600); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🤖</div>
+                            <h4 style="color: #FF9900; margin-bottom: 0.5rem; font-size: 1rem;">Generative AI Foundations</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Academy</p>
+                        </div>
+                        
+                        <div class="aws-cert-item" onclick="openCertificate('AWS Certies/AWS_Academy_Graduate___Cloud_Foundations___Training_Badge_Badge20251001-32-huzhra.pdf')">
+                            <div style="background: linear-gradient(45deg, #FF9900, #FF6600); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">☁️</div>
+                            <h4 style="color: #FF9900; margin-bottom: 0.5rem; font-size: 1rem;">Cloud Foundations</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Academy</p>
+                        </div>
+                        
+                        <div class="aws-cert-item" onclick="openCertificate('AWS Certies/AWS_Academy_Graduate___Data_Engineering___Training_Badge_Badge20251001-32-baimd2.pdf')">
+                            <div style="background: linear-gradient(45deg, #FF9900, #FF6600); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🔧</div>
+                            <h4 style="color: #FF9900; margin-bottom: 0.5rem; font-size: 1rem;">Data Engineering</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Academy</p>
+                        </div>
+                        
+                        <div class="aws-cert-item" onclick="openCertificate('AWS Certies/AWS_Academy_Graduate___Machine_Learning_Foundations___Training_Badge_Badge20251001-29-d5dyft.pdf')">
+                            <div style="background: linear-gradient(45deg, #FF9900, #FF6600); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🧠</div>
+                            <h4 style="color: #FF9900; margin-bottom: 0.5rem; font-size: 1rem;">ML Foundations</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Academy</p>
+                        </div>
+                        
+                        <div class="aws-cert-item" style="grid-column: span 2;" onclick="openCertificate('AWS Certies/aws-educate-introduction-to-generative-ai-training-BADGE.png')">
+                            <div style="background: linear-gradient(45deg, #FF9900, #FF6600); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🎓</div>
+                            <h4 style="color: #FF9900; margin-bottom: 0.5rem; font-size: 1rem;">Introduction to Generative AI</h4>
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Educate</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AWS Badges Column -->
+                <div>
+                    <h3 style="color: #FF9900; margin-bottom: 2rem; text-align: center; font-size: 1.5rem;">🏅 Badges</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="aws-badge-item" onclick="showBadge('AWS Certies/aws-academy-graduate-generative-ai-foundations-BADGES.png')">
+                            <img src="AWS Certies/aws-academy-graduate-generative-ai-foundations-BADGES.png" alt="Generative AI Badge" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.5rem;">
+                            <p style="font-size: 0.8rem; opacity: 0.8;">Generative AI</p>
+                        </div>
+                        
+                        <div class="aws-badge-item" onclick="showBadge('AWS Certies/aws-academy-graduate-cloud-foundations-training-BADGE.png')">
+                            <img src="AWS Certies/aws-academy-graduate-cloud-foundations-training-BADGE.png" alt="Cloud Foundations Badge" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.5rem;">
+                            <p style="font-size: 0.8rem; opacity: 0.8;">Cloud Foundations</p>
+                        </div>
+                        
+                        <div class="aws-badge-item" onclick="showBadge('AWS Certies/aws-academy-graduate-data-engineering-training-BADGE.png')">
+                            <img src="AWS Certies/aws-academy-graduate-data-engineering-training-BADGE.png" alt="Data Engineering Badge" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.5rem;">
+                            <p style="font-size: 0.8rem; opacity: 0.8;">Data Engineering</p>
+                        </div>
+                        
+                        <div class="aws-badge-item" onclick="showBadge('AWS Certies/aws-academy-graduate-machine-learning-foundations-BADGE.png')">
+                            <img src="AWS Certies/aws-academy-graduate-machine-learning-foundations-BADGE.png" alt="ML Foundations Badge" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.5rem;">
+                            <p style="font-size: 0.8rem; opacity: 0.8;">ML Foundations</p>
+                        </div>
+                        
+                        <div class="aws-badge-item" style="grid-column: span 2;" onclick="showBadge('AWS Certies/aws-educate-introduction-to-generative-ai-training-BADGE.png')">
+                            <img src="AWS Certies/aws-educate-introduction-to-generative-ai-training-BADGE.png" alt="AWS Educate Badge" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 0.5rem;">
+                            <p style="font-size: 0.8rem; opacity: 0.8;">AWS Educate - Intro to Gen AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Certifications -->
+            <h2 style="color: #4285F4; margin: 4rem 0 2rem 0; text-align: center; font-size: 2rem;">🔍 Google Cloud Certifications & Badges</h2>
+            
+            <!-- Google Badges Only -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto 4rem;">
+                <div class="google-badge-item" onclick="showBadge('Google/BigQuery for Data Analysts.png')">
+                    <img src="Google/BigQuery for Data Analysts.png" alt="BigQuery Badge" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;">
+                    <h4 style="color: #4285F4; margin-bottom: 0.5rem; font-size: 1rem;">BigQuery for Data Analysts</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Google Cloud</p>
+                </div>
+                
+                <div class="google-badge-item" onclick="showBadge('Google/Introduction to Data Analytics on Google Cloud.png')">
+                    <img src="Google/Introduction to Data Analytics on Google Cloud.png" alt="Data Analytics Badge" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;">
+                    <h4 style="color: #4285F4; margin-bottom: 0.5rem; font-size: 1rem;">Introduction to Data Analytics</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Google Cloud</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openCertificate(path) {
+            // Open the PDF certificate in a new tab
+            window.open(path, '_blank');
+        }
+
+        function showBadge(imagePath) {
+            // Create modal to show badge image
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                background: rgba(0,0,0,0.8); z-index: 10000; display: flex; 
+                align-items: center; justify-content: center; cursor: pointer;
+            `;
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.style.cssText = 'max-width: 90%; max-height: 90%; border-radius: 10px;';
+            modal.appendChild(img);
+            modal.onclick = () => document.body.removeChild(modal);
+            document.body.appendChild(modal);
+        }
+
+        // Navigation background change on scroll
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const theme = document.documentElement.getAttribute('data-theme');
+            if (window.scrollY > 100) {
+                nav.style.background = theme === 'dark' ? 'rgba(15, 15, 35, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.style.background = theme === 'dark' ? 'rgba(15, 15, 35, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -165,6 +165,8 @@
             align-items: center;
         }
 
+
+
         /* Dark Mode Toggle */
         .theme-toggle {
             background: none;
@@ -203,7 +205,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(45deg, #667eea, #764ba2);
             transition: width 0.3s ease;
         }
 
@@ -249,10 +251,10 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center 25%;
+            object-position: center 20%;
             border: 4px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transform: scale(1.1);
+            transform: scale(1.3);
         }
 
         .hero h1 {
@@ -289,6 +291,27 @@
             animation: fadeInUp 1s ease 0.6s both;
         }
 
+        .btn-resume {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
         .btn {
             padding: 12px 30px;
             border: none;
@@ -321,27 +344,6 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: #667eea;
-        }
-
-        .btn-resume {
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-resume:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
 
         /* Floating Elements */
@@ -411,13 +413,8 @@
         }
 
         .stat-item:first-child {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border: 2px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .stat-item:nth-child(2) {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            border: 2px solid rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border: 2px solid rgba(59, 130, 246, 0.3);
         }
 
         .stat-item:last-child {
@@ -431,11 +428,7 @@
         }
 
         .stat-item:first-child:hover {
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
-        }
-
-        .stat-item:nth-child(2):hover {
-            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
 
         .stat-item:last-child:hover {
@@ -626,47 +619,6 @@
             border-top: 1px solid rgba(30, 41, 59, 0.1);
         }
 
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-
-        [data-theme="dark"] .skeleton {
-            background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
-            background-size: 200% 100%;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .skeleton-text {
-            height: 1rem;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-        }
-
-        .skeleton-title {
-            height: 2rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-
-        /* Parallax Effects */
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
-            will-change: transform;
-        }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -718,6 +670,49 @@
             .cta-buttons {
                 justify-content: center;
             }
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        [data-theme="dark"] .skeleton {
+            background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-text {
+            height: 1rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .skeleton-title {
+            height: 2rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+
+
+        /* Parallax Effects */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            will-change: transform;
         }
 
         /* Scroll animations */
